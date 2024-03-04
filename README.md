@@ -41,9 +41,9 @@ export PATH=~/bin:$PATH
 ### Workflow
 
 ```zsh
-$ edit file-name.tal
-$ uxnasm file-name.tal rom-name.rom && uxncli rom-name.rom
-$ uxncli rom-name.rom > file-name-output.txt
+$ micro file-name.tal
+$ uxnasm file-name.tal fil-name.rom && uxncli file-name.rom
+$ uxncli rom-name.rom &> file-name.txt
 ```
 
 ## Uf
@@ -56,7 +56,7 @@ $ cd uf
 $ uxnasm kernel.tal kernel.rom
 $ uxncli kernel.rom <uf.f
 $ cp ufx.rom uf.rom uf0.rom ~/roms
-$ sudo apt install rlwrap  # for read line editing support
+$ sudo apt install rlwrap                 # CLI REPL readline editing support
 ```
 
 ### Updating
@@ -80,6 +80,6 @@ alias ufo="rlwrap uxncli ~/roms/uf0.rom"  # core
 ## Updating configuration
 
 ```zsh
-$ micro ~/zshrc  # do edits
-$ source ~/.zshrc
+$ micro ~/zshrc    # do edits
+$ source ~/.zshrc  # reload configs
 ```
