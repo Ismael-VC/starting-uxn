@@ -62,9 +62,9 @@ $ cp ufx.rom uf.rom uf0.rom ~/roms
 ### Configuration
 
 ```zsh
-alias ufx="uxnemu ~/roms/ufx.rom"         # basic + uxn + graphical
-alias uf="rlwrap uxncli ~/roms/uf.rom"    # basic + uxn
-alias ufo="rlwrap uxncli ~/roms/uf0.rom"  # basic
+alias ufx="uxnemu ~/roms/ufx.rom"         # core + uxn + graphical
+alias uf="rlwrap uxncli ~/roms/uf.rom"    # core + uxn
+alias ufo="rlwrap uxncli ~/roms/uf0.rom"  # core
 ```
 
 ## Updating configuration
