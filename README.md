@@ -12,6 +12,7 @@ $ git clone https://git.sr.ht/\~rabbits/uxn
 $ cd uxn
 $ mkdir ~/bin
 $ sudo apt install libsdl2-dev  # Ubuntu
+$ pkg install sdl2              # Android Termux
 $ ./build.sh --install          # copies executables to ~/bin
 $ cp boot.rom ~/roms
 $ export PATH=~/bin:$PATH
