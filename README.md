@@ -11,7 +11,8 @@ implemented in [Uxntal](https://wiki.xxiivv.com/site/uxntal.html) (`.tal`) and i
 $ git clone https://git.sr.ht/\~rabbits/uxn
 $ cd uxn
 $ mkdir ~/bin
-$ ./build.sh --install  # copies executables to ~/bin
+$ sudo apt install libsdl2-dev  # Ubuntu
+$ ./build.sh --install          # copies executables to ~/bin
 $ cp boot.rom ~/roms
 $ export PATH=~/bin:$PATH
 ```
@@ -46,7 +47,7 @@ $ cd uf
 $ uxnasm kernel.tal kernel.rom
 $ uxncli kernel.rom <uf.f
 $ cp ufx.rom uf.rom uf0.rom ~/roms
-$ sudo apt install rlwrap
+$ sudo apt install rlwrap  # for read line editing support
 ```
 
 ### Updating
