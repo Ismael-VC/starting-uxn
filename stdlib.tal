@@ -1,0 +1,84 @@
+(
+@|stdlib )
+
+( Set breakpoint. )
+%dbg { #010e DEO } ( -- )
+
+( Prints a new line. )
+@cr ( -- )
+	#0a18 DEO
+JMP2r
+
+( Exit immediatly. )
+@bye ( -> )
+	#800f DEO
+BRK
+
+( Prints an ASCII character. )
+@emit ( char -- )
+	#18 DEO
+JMP2r
+
+( Prints n spaces. )
+@spaces ( n -- )
+	#0000 &loop
+		#2018 DEO
+		INC2 GTH2k ?&loop
+	POP2 POP2
+JMP2r
+
+( Prints 1 space. )
+@space ( -- )
+	#2018 DEO
+JMP2r
+
+( Prints an hexadecimal short. )
+@phex2 ( u* -- )
+	SWP /b
+	&b ( -- )
+		DUP #04 SFT /c
+	&c ( -- )
+		#0f AND DUP #09 GTH #27 MUL ADD [ LIT "0 ] ADD #18 DEO
+JMP2r
+
+( Prints an hexadecimal byte. )
+@phex ( u -- )
+	#00 SWP phex2
+JMP2r
+
+( Prints inline string. )
+@pistr ( {str}* -- )
+	SWP2r STH2r DUP2k #0002 SUB2 LDA2 ADD2 SWP2
+	&loop ( end* start* -- )
+		LDAk #18 DEO
+		INC2 GTH2k ?&loop
+	POP2 POP2
+JMP2r
+
+( Prints null terminated string. )
+@pzstr ( str* -- )
+	&loop
+		LDAk #18 DEO
+		INC2 LDAk ?&loop
+	POP2
+JMP2r
+
+( Prints null terminated inline string. )
+@pizstr ( {str}* -- )
+	SWP2r STH2r pzstr
+JMP2r
+
+@pcstr ( cstr* )
+	DUP2 LDA2 ,&len STR2
+	INC2 INC2 ,&str STR2
+	#0000 ,&count STR2
+	[ LIT2 &len $2 ] [ LIT2 &count $2 ] &loop
+		[ LIT2 &str $2 ] ,&count LDR2 ADD2
+		LDA #18 DEO
+		INC2 ,&count STR2k POP GTH2k ?&loop
+	POP2 POP2
+JMP2r
+
+@picstr ( {str}* -- )
+	SWP2r STH2r #0002 SUB2 pcstr
+JMP2r
