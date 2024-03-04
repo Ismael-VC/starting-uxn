@@ -37,6 +37,14 @@ alias uxn="uxnemu ~/roms/boot.rom"  # Varvara's Potato OS
 export PATH=~/bin:$PATH
 ```
 
+### Workflow
+
+```zsh
+$ edit file-name.tal
+$ uxnasm file-name.tal rom-name.rom && uxncli rom-name.rom
+$ uxncli rom-name.rom > file-name-output.txt
+```
+
 ## Uf
 
 ### Installation

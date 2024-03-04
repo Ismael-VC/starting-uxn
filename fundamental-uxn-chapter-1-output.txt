@@ -1,0 +1,35 @@
+               *
+               ***
+*
+*
+*
+                              *
+                              *
+                              *
+*****
+***********************************
+
+                              *****
+                              *
+                              *****
+                              *
+                              *
+
+                              *****
+                              *
+                              *****
+                              *
+                              *
+
+Hello, I speak Uxn.
+Hello, I speak Uxn!
+0007
+0007
+0008 0006 0004 0002 
+In Uxn, stacks are circular, there can't be stack overflows or underflows:
+001e 0014 000a 
+Bookends
+Dear Uxners,
+Dear Uxners,
+    Thanks for the Bookends.
+005a
