@@ -56,7 +56,7 @@ JMP2r
 	Usage:
 
 		|100
-			{ "Print 20 "inline 20 "string: 0a } pist
+			{ "Print 20 "inline 20 "string: 0a } pistr
 		BRK
 )
 @pistr ( {str}* -- )
