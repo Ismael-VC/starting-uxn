@@ -1,15 +1,22 @@
-( uxnasm starting-uxn.tal starting-uxn.rom && uxncli starting-uxn.rom )
+( starting-uxn.tal )
 
 |100
 
+(
+@|code )
+
 @main ( -- )
 	( Fundamental Uxn )
-	#000f spaces #2a emit LIT "* emit
+	#000f spaces
+	#2a emit cr
+	#000f spaces #2a emit LIT "* emit star
 	cr star cr star cr star cr
 	margin star cr margin star cr margin star cr
 	#0005 stars cr
 	#0023 stars cr
+	bar blip bar blip blip cr
 	F
+
 	{ "Print 20 "inline 20 "string: 0a } pistr
 	{ @istr "Hello, 20 "I 20 "speak 20 "Uxn. 0a } pistr
 
@@ -20,6 +27,16 @@
 
 	;cstr pcstr
 	{ "Print 20 "inline 20 "counted 20 "string. 0a } picstr
+
+	greet
+
+	#03 #04 ADD phex cr
+	#0003 four-more phex2 cr
+	#02 #04 #06 #08 phex space phex space phex space phex space cr
+	{ "In 20 "Uxn, 20 "stacks 20 "are 20 "circular, 20 "there 20 "can't 20 "be 20
+	  "stack 20 "overflows 20 "or 20 "underflows: 0a } pistr
+	#0a #14 #1e phex space phex space phex space phex space cr
+	dbg
 BRK
 
 ( Large letter F. )
@@ -30,9 +47,14 @@ BRK
 @bar ( -- ) cr margin #0005 stars JMP2r
 @F ( -- ) bar blip bar blip blip cr cr JMP2r
 
+@greet ( -- ) { "Hello, 20 "I 20 "speak 20 "Uxn! 0a } pistr JMP2r
+@four-more ( n* -- [n+4]* ) #0004 ADD2 JMP2r
+
 (
 @|data )
 @zstr "Null 20 "terminated 20 "string. 0a $1
 @cstr &len 0010 &data "Counted 20 "string. 0a
 
+(
+@|include )
 ~stdlib.tal

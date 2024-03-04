@@ -2,7 +2,11 @@
 @|stdlib )
 
 ( Set breakpoint. )
-%dbg { #010e DEO } ( -- )
+@dbg ( -- )
+	STH2r ,&rtn STR2
+	#010e DEO
+	[ LIT2 &rtn $2 ] STH2
+JMP2r
 
 ( Prints a new line. )
 @cr ( -- )
@@ -68,6 +72,7 @@ JMP2r
 	SWP2r STH2r pzstr
 JMP2r
 
+( Print counted string. )
 @pcstr ( cstr* )
 	DUP2 LDA2 ,&len STR2
 	INC2 INC2 ,&str STR2
@@ -79,6 +84,7 @@ JMP2r
 	POP2 POP2
 JMP2r
 
+( Print inline string with counted string implementation. )
 @picstr ( {str}* -- )
 	SWP2r STH2r #0002 SUB2 pcstr
 JMP2r
