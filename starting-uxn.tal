@@ -1,4 +1,4 @@
-( starting-uxn.tal )
+( starting-uxn-chapter-1.tal )
 
 |100
 
@@ -17,27 +17,29 @@
 	bar blip bar blip blip cr
 	F
 
-	{ "Print 20 "inline 20 "string: 0a } pistr
 	{ @istr "Hello, 20 "I 20 "speak 20 "Uxn. 0a } pistr
-
-	{ "Print 20 "null 20 "terminated 20 "string: 0a } pistr
-	{ @izstr "Hello, 20 "I 20 "speak 20 "Uxn. 0a00 } pizstr
-	;izstr pzstr
-	;zstr pzstr
-
-	;cstr pcstr
-	{ "Print 20 "inline 20 "counted 20 "string. 0a } picstr
-
 	greet
 
 	#03 #04 ADD phex cr
 	#0003 four-more phex2 cr
 	#02 #04 #06 #08 phex space phex space phex space phex space cr
+
 	{ "In 20 "Uxn, 20 "stacks 20 "are 20 "circular, 20 "there 20 "can't 20 "be 20
 	  "stack 20 "overflows 20 "or 20 "underflows: 0a } pistr
-	#0a #14 #1e phex space phex space phex space phex space cr
-	dbg
+	#0a #14 #1e phex space phex space phex space ( phex space ) cr
+
+
+	( Excercises )
+	gift cr
+	{ "Uxners, } giver cr
+	{ "Uxners, } thanks cr
+
+	#0064 ten.less phex2 cr
+
 BRK
+
+(
+@|examples )
 
 ( Large letter F. )
 @star ( -- ) #2a18 DEO JMP2r
@@ -51,9 +53,14 @@ BRK
 @four-more ( n* -- [n+4]* ) #0004 ADD2 JMP2r
 
 (
-@|data )
-@zstr "Null 20 "terminated 20 "string. 0a $1
-@cstr &len 0010 &data "Counted 20 "string. 0a
+@|excercises )
+@gift ( -- ) { "Bookends } pistr JMP2r
+@giver ( {name}* -- ) { "Dear 20 } pistr SWP2r pistr JMP2r
+@thanks ( {name}* -- )
+	SWP2r giver cr #0004 spaces
+	{ "Thanks 20 "for 20 "the 20 } pistr gift LIT ". emit
+JMP2r
+@ten.less ( n* -- ) #000a SUB2 JMP2r
 
 (
 @|include )

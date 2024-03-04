@@ -50,7 +50,15 @@ JMP2r
 	#00 SWP phex2
 JMP2r
 
-( Prints inline string. )
+(
+		Prints inline string.
+
+	Usage:
+
+		|100
+			{ "Print 20 "inline 20 "string: 0a } pist
+		BRK
+)
 @pistr ( {str}* -- )
 	SWP2r STH2r DUP2k #0002 SUB2 LDA2 ADD2 SWP2
 	&loop ( end* start* -- )
@@ -59,7 +67,17 @@ JMP2r
 	POP2 POP2
 JMP2r
 
-( Prints null terminated string. )
+(
+		Prints null terminated string.
+
+	Usage:
+
+		|100
+			;zstr pzstr
+		BRK
+
+		@zstr "Null 20 "terminated 20 "string. 0a $1
+)
 @pzstr ( str* -- )
 	&loop
 		LDAk #18 DEO
@@ -72,7 +90,17 @@ JMP2r
 	SWP2r STH2r pzstr
 JMP2r
 
-( Print counted string. )
+(
+		Print counted string.
+
+	Usage:
+
+		|100
+			;cstr pcstr
+		BRK
+
+		@cstr &len 0010 &data "Counted 20 "string. 0a
+)
 @pcstr ( cstr* )
 	DUP2 LDA2 ,&len STR2
 	INC2 INC2 ,&str STR2
