@@ -12,6 +12,7 @@ $ git clone https://git.sr.ht/\~rabbits/uxn
 $ cd uxn
 $ mkdir ~/bin
 $ ./build.sh --install  # copies executables to ~/bin
+$ cp boot.rom ~/roms
 $ export PATH=~/bin:$PATH
 ```
 
@@ -21,15 +22,16 @@ $ export PATH=~/bin:$PATH
 $ cd uxn
 $ git pull
 $ ./build.sh --install
+$ cp boot.rom ~/roms
 ```
 
 ### Configuration
 
 ```zsh
-alias asm="~/bin/uxnasm"
-alias cli="~/bin/uxncli"
-alias emu="~/bin/uxnemu"
-alias uxn="uxnemu ~/roms/boot.rom"
+alias asm="~/bin/uxnasm"            # assembler
+alias cli="~/bin/uxncli"            # command line interface
+alias emu="~/bin/uxnemu"            # graphical emulator
+alias uxn="uxnemu ~/roms/boot.rom"  # Varvara's Potato OS
 
 export PATH=~/bin:$PATH
 ```
@@ -43,7 +45,7 @@ $ git clone https://gitlab.com/b2495/uf
 $ cd uf
 $ uxnasm kernel.tal kernel.rom
 $ uxncli kernel.rom <uf.f
-$ cp ufx.rom uf.rom uf0.rom ~/bin
+$ cp ufx.rom uf.rom uf0.rom ~/roms
 $ sudo apt install rlwrap
 ```
 
@@ -54,15 +56,15 @@ $ cd uf
 $ git pull
 $ uxnasm kernel.tal kernel.rom
 $ uxncli kernel.rom <uf.f
-$ cp ufx.rom uf.rom uf0.rom ~/bin
+$ cp ufx.rom uf.rom uf0.rom ~/roms
 ```
 
 ### Configuration
 
 ```zsh
-alias ufx="uxnemu ~/roms/ufx.rom"
-alias uf="rlwrap uxncli ~/roms/uf.rom"
-alias ufo="rlwrap uxncli ~/roms/uf0.rom"
+alias ufx="uxnemu ~/roms/ufx.rom"         # basic + uxn + graphical
+alias uf="rlwrap uxncli ~/roms/uf.rom"    # basic + uxn
+alias ufo="rlwrap uxncli ~/roms/uf0.rom"  # basic
 ```
 
 ## Updating configuration
