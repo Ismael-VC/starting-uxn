@@ -30,12 +30,6 @@ alias asm="~/bin/uxnasm"
 alias cli="~/bin/uxncli"
 alias emu="~/bin/uxnemu"
 alias uxn="uxnemu ~/roms/boot.rom"
-alias bug="uxnemu ~/roms/beetbug.rom"
-alias lin="uxncli ~/roms/uxnlin.rom"
-alias bal="uxncli ~/roms/uxnbal.rom"
-alias rea="uxncli ~/roms/uxnrea.rom"
-alias blim="uxncli ~/roms/drifblim.rom"
-alias ufor="uxncli ~/roms/uxnfor.rom"
 
 export PATH=~/bin:$PATH
 ```
