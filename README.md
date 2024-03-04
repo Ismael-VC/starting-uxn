@@ -8,12 +8,19 @@ implemented in [Uxntal](https://wiki.xxiivv.com/site/uxntal.html) (`.tal`) and i
 ### Installation
 
 ```zsh
-$ git clone https://git.sr.ht/\~rabbits/uxn  # first time only
+$ git clone https://git.sr.ht/\~rabbits/uxn
 $ cd uxn
-$ git pull  # updating only
 $ mkdir ~/bin
-$ ./build.sh --install
+$ ./build.sh --install  # copies executables to ~/bin
 $ export PATH=~/bin:$PATH
+```
+
+### Updating
+
+```zsh
+$ cd uxn
+$ git pull
+$ ./build.sh --install
 ```
 
 ### Configuration
@@ -38,13 +45,22 @@ export PATH=~/bin:$PATH
 ### Installation
 
 ```zsh
-$ git clone https://gitlab.com/b2495/uf  # first time only
+$ git clone https://gitlab.com/b2495/uf
 $ cd uf
-$ git pull  # updating only
 $ uxnasm kernel.tal kernel.rom
 $ uxncli kernel.rom <uf.f
 $ cp ufx.rom uf.rom uf0.rom ~/bin
 $ sudo apt install rlwrap
+```
+
+### Updating
+
+```zsh
+$ cd uf
+$ git pull
+$ uxnasm kernel.tal kernel.rom
+$ uxncli kernel.rom <uf.f
+$ cp ufx.rom uf.rom uf0.rom ~/bin
 ```
 
 ### Configuration
@@ -55,7 +71,7 @@ alias uf="rlwrap uxncli ~/roms/uf.rom"
 alias ufo="rlwrap uxncli ~/roms/uf0.rom"
 ```
 
-## Update configuration
+## Updating configuration
 
 ```zsh
 $ micro ~/zshrc  # do edits
