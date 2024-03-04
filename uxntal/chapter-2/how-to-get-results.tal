@@ -43,4 +43,4 @@ JMP2r
 
 (
 @|include )
-~stdlib.tal
+~../../stdlib/stdlib.tal

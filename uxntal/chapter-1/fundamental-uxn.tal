@@ -26,8 +26,8 @@
 
 	{ "In 20 "Uxn, 20 "stacks 20 "are 20 "circular, 20 "there 20 "can't 20 "be 20
 	  "stack 20 "overflows 20 "or 20 "underflows: 0a } pistr
-	#0a #14 #1e phex space phex space phex space ( phex space ) cr
-
+	#0a #14 #1e phex space phex space phex space phex space cr
+	dbg
 
 	( Excercises )
 	gift cr
@@ -35,7 +35,6 @@
 	{ "Uxners, } thanks cr
 
 	#0064 ten.less phex2 cr
-
 BRK
 
 (
@@ -57,11 +56,10 @@ BRK
 @gift ( -- ) { "Bookends } pistr JMP2r
 @giver ( {name}* -- ) { "Dear 20 } pistr SWP2r pistr JMP2r
 @thanks ( {name}* -- )
-	SWP2r giver cr #0004 spaces
-	{ "Thanks 20 "for 20 "the 20 } pistr gift LIT ". emit
+	SWP2r giver cr { 09 "Thanks 20 "for 20 "the 20 } pistr gift LIT ". emit
 JMP2r
 @ten.less ( n* -- ) #000a SUB2 JMP2r
 
 (
 @|include )
-~stdlib.tal
+~../../stdlib/stdlib.tal
