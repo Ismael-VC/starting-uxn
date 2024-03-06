@@ -83,3 +83,11 @@ alias ufo="rlwrap uxncli ~/roms/uf0.rom"  # core
 $ micro ~/zshrc    # do edits
 $ source ~/.zshrc  # reload configs
 ```
+
+### Workflow
+
+```zsh
+$ micro file-name.fth  # edit code
+$ uf < file-name.fth   # give uf a file to read as code (exits when finished though!)
+$ uf                   # repl + copy paste code
+```
