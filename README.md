@@ -11,11 +11,15 @@ implemented in [Uxntal](https://wiki.xxiivv.com/site/uxntal.html) (`.tal`) and i
 $ git clone https://git.sr.ht/\~rabbits/uxn
 $ cd uxn
 $ mkdir ~/bin
-$ sudo apt install libsdl2-dev  # Ubuntu
-$ pkg install sdl2              # Android Termux
-$ ./build.sh --install          # copies executables to ~/bin
+$ sudo apt install libsdl2-dev wget  # Ubuntu
+$ pkg install sdl2 wget              # Android Termux
+$ ./build.sh --install               # copies executables to ~/bin
 $ cp boot.rom ~/roms
 $ export PATH=~/bin:$PATH
+$ cd ~/.config/micro
+$ mkdir syntax && cd syntax
+$ # Setup UXN Tal syntax highlighting for the micro editor.
+$ wget https://hacklab.nilfm.cc/dotfiles/raw/main/micro/syntax/uxn.yaml
 ```
 
 ### Updating
@@ -30,6 +34,7 @@ $ cp boot.rom ~/roms
 ### Configuration
 
 ```zsh
+# ~/.zshrc
 alias asm="~/bin/uxnasm"            # assembler
 alias cli="~/bin/uxncli"            # command line interface
 alias emu="~/bin/uxnemu"            # graphical emulator
@@ -72,6 +77,7 @@ $ cp ufx.rom uf.rom uf0.rom ~/roms
 ### Configuration
 
 ```zsh
+# ~/.zshrc
 alias ufx="uxnemu -2x ~/roms/ufx.rom"     # core + uxn + graphical
 alias uf="rlwrap uxncli ~/roms/uf.rom"    # core + uxn
 alias ufo="rlwrap uxncli ~/roms/uf0.rom"  # core
