@@ -1,9 +1,9 @@
-# Starting Uxntal and Uf Forth.
+# Starting UXN Tal and UF Forth.
 
 This repository contains example code and excercises from the book ["Starting Forth"](https://www.forth.com/wp-content/uploads/2018/01/Starting-FORTH.pdf),
 implemented in [Uxntal](https://wiki.xxiivv.com/site/uxntal.html) (`.tal`) and in [Uf Forth](https://gitlab.com/b2495/uf) (`.f`), separated by chapter.
 
-## Uxn
+## UXN
 
 ### Installation
 
@@ -46,7 +46,7 @@ $ uxnasm file-name.tal fil-name.rom && uxncli file-name.rom
 $ uxncli rom-name.rom &> file-name.txt
 ```
 
-## Uf
+## UF
 
 ### Installation
 
